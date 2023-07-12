@@ -1,22 +1,6 @@
 ﻿#Requires AutoHotkey v2.0
 
-GDebugPrint(val)
-{
-    OutputDebug(val "`n")
-}
-
-GSetVaue(this, at_x, at_y)
-{
-    this.x := at_x
-    this.y := at_y
-}
-
-; 点坐标基类对象
-
-
-
-
-class Point {
+class Point {   ; 点坐标基类对象
     x := 0
     y := 0
     SetValue(x, y){
@@ -29,7 +13,14 @@ class Point {
     }
 }
 
-;存入物品
-gpPutGoods:=Point.Call(688, 684)
+GDebugPrint(val)    ;打印调试日志
+{
+    OutputDebug(val "`n")
+}
 
-GDebugPrint(A_WorkingDir)
+GClickCoordinate(Point){    ;点击坐标
+    MouseMove(Point.x, Point.y)
+    Sleep(200)
+    SendEvent("{Click}")    
+    Sleep(200)
+}

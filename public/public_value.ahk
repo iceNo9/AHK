@@ -1,19 +1,20 @@
-#Include %A_ScriptDir%\lib.ahk
+#Include %A_ScriptDir%\public\lib.ahk
 
-;存入物品
-gpPutGoods:=Point.Call(688, 684)
 
-;取出物品
-gpGetGoods :=Point.Call(741, 684)
+gpPutGoods:=Point.Call(688, 684)    ;存入物品
+gpGetGoods :=Point.Call(741, 684)   ;取出物品
+gpPutGold :=Point.Call(686, 627)    ;存入金币
+gpGutGold :=Point.Call(741, 627)    ;取出金币
+gpShortBar := Array.Call()          ;快捷栏1-6
+gpVault := Array.Call()             ;金库1行1列-13行8列
 
-;存入金币
-gpPutGold :=Point.Call(686, 627)
 
-;取出金币
-gpGutGold :=Point.Call(741, 627)
 
-;快捷栏1-6
-gpShortBar := Array.Call()
+
+
+
+
+
 gpShortBarOffset := 30
 InitShortBar(){
     gpShortBar.Capacity := 6
@@ -27,8 +28,6 @@ InitShortBar(){
     }
 }
 
-;金库1行1列-13行8列
-gpVault := Array.Call()
 gpVaultOffset := 30
 InitVault(){
     gpVault.Capacity := 104
@@ -47,7 +46,8 @@ InitVault(){
     }
 }
 
-InitShortBar()
-InitVault()
+GInitPublicValue(){
+    InitShortBar()
+    InitVault()
+}
 
-GDebugPrint("end")
