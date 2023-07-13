@@ -1,5 +1,4 @@
 #Include %A_ScriptDir%\public\public_value.ahk
-#Include %A_ScriptDir%\public\lib.ahk
 
 ; A1_gui := Gui.Call("AlwaysOnTop", "设置参数")
 
@@ -11,11 +10,11 @@
 
 ; A1_gui.Show
 
-WinMove(0,0,,,"地下城与勇士：创新世纪")
-WinActivate("地下城与勇士：创新世纪")
+; WinMove(0,0,,,"地下城与勇士：创新世纪")
+; WinActivate("地下城与勇士：创新世纪")
 
 
-A1_ggoldNumber := 0 ;金币初始化值
+global A1_ggoldNumber := 0 ;金币初始化值
 A1_ImportPara(val){
     A1_ggoldNumber := val
     GDebugPrint(A1_ggoldNumber)
