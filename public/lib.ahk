@@ -18,9 +18,12 @@ GDebugPrint(val)    ;打印调试日志
     OutputDebug(val "`n")
 }
 
+
 GClickCoordinate(Point){    ;点击坐标
     MouseMove(Point.x, Point.y)
-    Sleep(200)
+    Sleep(100)
     SendEvent("{Click}")    
-    Sleep(200)
+    Sleep(100)
 }
+
+
